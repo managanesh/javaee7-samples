@@ -31,8 +31,8 @@
       <maven>${maven.min.version}</maven>
     </prerequisites>
 
-    <modules>
-      <module>batch</module>
+    <modules>      <module>servlet</module>
+   <!--   <module>batch</module>
       <module>cdi</module>
       <module>concurrency</module>
       <module>ejb</module>
@@ -52,8 +52,8 @@
       <module>servlet</module>
       <module>validation</module>
       <module>websocket</module>
-      <!-- module>extra</module -->
-      <module>util</module>
+      &lt;!&ndash; module>extra</module &ndash;&gt;
+      <module>util</module>-->
     </modules>
 
     <dependencyManagement>
@@ -101,7 +101,7 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
-            <scope>provided</scope>
+
         </dependency>
 
         <!-- Test dependencies which can be used in sub-modules -->

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <parent>
         <groupId>org.javaee7</groupId>
         <artifactId>javaee7-samples</artifactId>
@@ -15,7 +17,9 @@
     <name>Java EE 7 Servlet Samples</name>
 
     <modules>
-        <module>cookies</module>
+
+        <module>nonblocking</module>
+        <!--<module>cookies</module>
         <module>async-servlet</module>
         <module>error-mapping</module>
         <module>event-listeners</module>
@@ -30,8 +34,41 @@
         <module>security-form-based</module>
         <module>security-programmatic</module>
         <module>security-deny-uncovered</module>
-<!--        <module>security-annotated</module>
-        <module>security-digest</module>-->
-        <module>security-basicauth-omission</module>
+              <module>security-annotated</module>
+                <module>security-digest</module>
+        <module>security-basicauth-omission</module>  -->
     </modules>
+
+    <build>
+        <plugins>
+            <!--<plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1-SNAPSHOT</version>
+            </plugin>-->
+
+            <!-- <plugin>
+                 <groupId>org.eclipse.jetty</groupId>
+                 <artifactId>jetty-maven-plugin</artifactId>
+                 <version>9.0.5.v20130815</version>
+             </plugin-->
+
+
+            <plugin>
+                <groupId>org.apache.openejb.maven</groupId>
+                <artifactId>tomee-maven-plugin</artifactId>
+                <version>1.6.0.2</version>
+                <configuration>
+                    <tomeeVersion>1.6.0.2</tomeeVersion>
+                    <tomeeClassifier>plus</tomeeClassifier>
+                     <libs>
+                         <lib>javax:javaee-api:7.0</lib>
+                         <lib>org.apache.openejb:openejb-concurrency-utilities-ee:4.6.0</lib>
+                     </libs>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+    </build>
 </project>

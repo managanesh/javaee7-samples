@@ -6,17 +6,11 @@
       <xsd:import namespace="http://endpoint.jaxws.javaee7.org/" schemaLocation="EBookStoreImplService_schema1.xsd"/>
     </xsd:schema>
   </types>
-  <message name="welcomeMessage">
-    <part name="parameters" element="tns:welcomeMessage"/>
+  <message name="addAppendix">
+    <part name="parameters" element="tns:addAppendix"/>
   </message>
-  <message name="welcomeMessageResponse">
-    <part name="parameters" element="tns:welcomeMessageResponse"/>
-  </message>
-  <message name="takeBook">
-    <part name="parameters" element="tns:takeBook"/>
-  </message>
-  <message name="takeBookResponse">
-    <part name="parameters" element="tns:takeBookResponse"/>
+  <message name="addAppendixResponse">
+    <part name="parameters" element="tns:addAppendixResponse"/>
   </message>
   <message name="findEBooks">
     <part name="parameters" element="tns:findEBooks"/>
@@ -30,20 +24,22 @@
   <message name="saveBookResponse">
     <part name="parameters" element="tns:saveBookResponse"/>
   </message>
-  <message name="addAppendix">
-    <part name="parameters" element="tns:addAppendix"/>
+  <message name="takeBook">
+    <part name="parameters" element="tns:takeBook"/>
   </message>
-  <message name="addAppendixResponse">
-    <part name="parameters" element="tns:addAppendixResponse"/>
+  <message name="takeBookResponse">
+    <part name="parameters" element="tns:takeBookResponse"/>
+  </message>
+  <message name="welcomeMessage">
+    <part name="parameters" element="tns:welcomeMessage"/>
+  </message>
+  <message name="welcomeMessageResponse">
+    <part name="parameters" element="tns:welcomeMessageResponse"/>
   </message>
   <portType name="EBookStore">
-    <operation name="welcomeMessage">
-      <input message="tns:welcomeMessage"/>
-      <output message="tns:welcomeMessageResponse"/>
-    </operation>
-    <operation name="takeBook">
-      <input message="tns:takeBook"/>
-      <output message="tns:takeBookResponse"/>
+    <operation name="addAppendix">
+      <input message="tns:addAppendix"/>
+      <output message="tns:addAppendixResponse"/>
     </operation>
     <operation name="findEBooks">
       <input message="tns:findEBooks"/>
@@ -53,23 +49,18 @@
       <input message="tns:saveBook"/>
       <output message="tns:saveBookResponse"/>
     </operation>
-    <operation name="addAppendix">
-      <input message="tns:addAppendix"/>
-      <output message="tns:addAppendixResponse"/>
+    <operation name="takeBook">
+      <input message="tns:takeBook"/>
+      <output message="tns:takeBookResponse"/>
+    </operation>
+    <operation name="welcomeMessage">
+      <input message="tns:welcomeMessage"/>
+      <output message="tns:welcomeMessageResponse"/>
     </operation>
   </portType>
   <binding name="EBookStoreImplPortBinding" type="tns:EBookStore">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-    <operation name="welcomeMessage">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="takeBook">
+    <operation name="addAppendix">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -96,7 +87,16 @@
         <soap:body use="literal"/>
       </output>
     </operation>
-    <operation name="addAppendix">
+    <operation name="takeBook">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="welcomeMessage">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
