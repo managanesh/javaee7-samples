@@ -52,7 +52,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @author Arun Gupta
  */
-@WebServlet(urlPatterns = {"/WriteServlet"})
+@WebServlet(urlPatterns = {"/WriteServlet"} , asyncSupported=true)
 public class WriteTestServlet extends HttpServlet {
 
     /**

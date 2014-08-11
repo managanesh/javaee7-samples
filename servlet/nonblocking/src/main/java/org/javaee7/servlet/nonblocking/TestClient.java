@@ -46,6 +46,7 @@ import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -72,6 +73,9 @@ public class TestClient extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
+
+        System.out.println("Starting........"+LogManager.getLogManager().getProperty("java.util.logging.ConsoleHandler.level")      )  ;
         try (PrintWriter out = response.getWriter()) {
             out.println("<html>");
             out.println("<head>");

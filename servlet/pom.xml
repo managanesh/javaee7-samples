@@ -19,6 +19,7 @@
     <modules>
 
         <module>nonblocking</module>
+        <module>security-annotated</module>
         <!--<module>cookies</module>
         <module>async-servlet</module>
         <module>error-mapping</module>
@@ -61,7 +62,15 @@
                 <configuration>
                     <tomeeVersion>1.6.0.2</tomeeVersion>
                     <tomeeClassifier>plus</tomeeClassifier>
+                    <config>${project.basedir}/resources/tomee/conf</config>
+
                      <libs>
+                         <lib>remove:javaee-api:6.0</lib>
+                         <lib>remove:servlet-api</lib>
+                         <lib>remove:jsp-api</lib>
+                         <lib>javax:javaee-web-api:7.0</lib>
+                         <lib>javax.enterprise:cdi-api:1.1</lib>
+
                          <lib>javax:javaee-api:7.0</lib>
                          <lib>org.apache.openejb:openejb-concurrency-utilities-ee:4.6.0</lib>
                      </libs>
